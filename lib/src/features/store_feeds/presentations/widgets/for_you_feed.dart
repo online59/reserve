@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
-import '../../models/store_model.dart';
-import 'near_me_card.dart';
+import 'for_you_card.dart';
 
-class NearMeFeed extends StatelessWidget {
-  const NearMeFeed({super.key});
+
+class ForYouFeed extends StatelessWidget {
+  const ForYouFeed({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class NearMeFeed extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(DefaultPadding.medium),
       constraints: const BoxConstraints(
-        maxHeight: 320,
+        maxHeight: 800,
         minHeight: 0,
       ),
       decoration: BoxDecoration(
@@ -30,18 +32,18 @@ class NearMeFeed extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Near me",
+                "For you",
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               TextButton(
                 onPressed: () {},
                 child: Text(
                   "See more",
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Pallete.primary,
-                      ),
+                    color: Pallete.primary,
+                  ),
                 ),
               )
             ],
@@ -49,35 +51,9 @@ class NearMeFeed extends StatelessWidget {
           const SizedBox(height: DefaultSpacing.medium),
           Expanded(
             child: ListView.builder(
-              scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-
-                // Sample of Store model
-                final store = StoreModel(
-                  id: 1,
-                  name: 'Store Name',
-                  address: AddressModel(
-                    city: 'City Name',
-                    state: 'State Name',
-                    country: 'Country Name',
-                    zip: 'Zip Code',
-                  ),
-                  rating: 4.5,
-                  image:
-                      'https://pakhotin.org/wp-content/uploads/2022/04/dreamstime_m_18955386-1024x683.jpg',
-                  phone: '1234567890',
-                  email: 'store@email.com',
-                  category: StoreCategory.random(),
-                  createdAt: '2022-01-01',
-                  updatedAt: '2022-01-01',
-                  type: StoreType.highlighted,
-                );
-
-                return NearMeCard(
-                  store: store,
-                );
+                return const ForYouCard();
               },
-              itemCount: 3,
             ),
           ),
         ],

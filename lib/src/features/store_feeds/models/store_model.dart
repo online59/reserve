@@ -46,6 +46,19 @@ class AddressModel {
 }
 
 enum StoreType implements Comparable<StoreType> {
+  normal(value: "Normal"),
+  highlighted(value: "Highlighted");
+
+  final String value;
+
+  const StoreType({required this.value});
+
+  @override
+  int compareTo(StoreType other) => toString().compareTo(other.toString());
+}
+
+enum StoreCategory implements Comparable<StoreCategory> {
+
   accessories (value: "Accessories"),
   automotive (value: "Automotive"),
   bakery (value: "Bakery"),
@@ -72,23 +85,6 @@ enum StoreType implements Comparable<StoreType> {
   sports (value: "Sports"),
   stationery (value: "Stationery"),
   toys (value: "Toys");
-
-  final String value;
-
-  const StoreType({required this.value});
-
-  @override
-  int compareTo(StoreType other) => toString().compareTo(other.toString());
-}
-
-enum StoreCategory implements Comparable<StoreCategory> {
-
-  foodBeverage(value: "Food & Beverage"),
-  healthBeauty(value: "Health & Beauty"),
-  clothAccessory(value: "Clothing & Accessories"),
-  homeElectronics(value: "Home & Electronics"),
-  entertainmentLeisure(value: "Entertainment & Leisure"),
-  automotiveService(value: "Automotive & Services");
 
   final String value;
 
