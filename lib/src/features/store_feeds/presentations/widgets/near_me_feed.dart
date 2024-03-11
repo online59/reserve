@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reserve/src/constants/strings.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -63,8 +64,7 @@ class NearMeFeed extends StatelessWidget {
                     zip: 'Zip Code',
                   ),
                   rating: 4.5,
-                  image:
-                      'https://pakhotin.org/wp-content/uploads/2022/04/dreamstime_m_18955386-1024x683.jpg',
+                  image: WebImageStrings.storeImage,
                   phone: '1234567890',
                   email: 'store@email.com',
                   category: StoreCategory.random(),

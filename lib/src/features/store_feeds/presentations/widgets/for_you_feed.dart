@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reserve/src/constants/strings.dart';
+import 'package:reserve/src/features/store_feeds/models/store_model.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -52,8 +54,28 @@ class ForYouFeed extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                return const ForYouCard();
+                
+                final store = StoreModel(
+                  id: 1,
+                  name: 'Store Name',
+                  address: AddressModel(
+                    city: 'City Name',
+                    state: 'State Name',
+                    country: 'Country Name',
+                    zip: 'Zip Code',
+                  ),
+                  rating: 4.5,
+                  image: WebImageStrings.storeImage,
+                  phone: '1234567890',
+                  email: 'store@email.com',
+                  category: StoreCategory.random(),
+                  createdAt: '2022-01-01',
+                  updatedAt: '2022-01-01',
+                  type: StoreType.highlighted,
+                );
+                return ForYouCard(store: store);
               },
+              itemCount: 3,
             ),
           ),
         ],

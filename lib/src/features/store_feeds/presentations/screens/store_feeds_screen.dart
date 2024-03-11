@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:reserve/src/constants/sizes.dart';
+import 'package:reserve/src/constants/strings.dart';
 import 'package:reserve/src/features/store_feeds/presentations/widgets/near_me_feed.dart';
 import '../../../../constants/colors.dart';
 import '../widgets/appointment_feed.dart';
@@ -42,7 +43,7 @@ class StoreFeedScreen extends StatelessWidget {
                       const CircleAvatar(
                         radius: 30,
                         backgroundImage: NetworkImage(
-                            'https://imageio.forbes.com/specials-images/imageserve/5babb7f1a7ea4342a948b79a/0x0.jpg'),
+                            WebImageStrings.profileImage),
                       ),
                       const SizedBox(width: DefaultSpacing.medium),
                       Column(

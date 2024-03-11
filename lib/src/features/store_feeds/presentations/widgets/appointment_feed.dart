@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reserve/src/constants/strings.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -57,8 +58,7 @@ class AppointmentFeed extends StatelessWidget {
                   owner: 'John Doe',
                   storeName: 'Starbucks',
                   storeLocation: 'New York',
-                  storeImage:
-                  'https://supplychainguru.co.th/wp-content/uploads/2021/06/Starbuck.png',
+                  storeImage: WebImageStrings.storeImage,
                   storePhone: '+66 83-855-9919',
                   guests: 2,
                   person: 'John Doe',

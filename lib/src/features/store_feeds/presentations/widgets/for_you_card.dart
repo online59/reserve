@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:reserve/src/features/store_feeds/models/store_model.dart';
 
 import '../../../../constants/sizes.dart';
 
 class ForYouCard extends StatelessWidget {
   const ForYouCard({
     super.key,
+    required this.store,
   });
+
+  final StoreModel store;
 
   @override
   Widget build(BuildContext context) {

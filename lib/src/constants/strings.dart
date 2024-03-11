@@ -21,3 +21,8 @@ class LottieImageStrings {
   static const String welcome = 'assets/lottie/welcome_animated.json';
   static const String loading = 'assets/lottie/page_loading_animated.json';
 }
+
+class WebImageStrings {
+  static const String profileImage = "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg";
+  static const String storeImage = "https://supplychainguru.co.th/wp-content/uploads/2021/06/Starbuck.png";
+}
