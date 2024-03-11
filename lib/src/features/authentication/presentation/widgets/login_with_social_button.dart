@@ -21,7 +21,7 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: TextButton.icon(
+      child: ElevatedButton.icon(
         onPressed: () {},
         icon: SvgPicture.asset(
           iconPath,
@@ -31,14 +31,16 @@ class SocialButton extends StatelessWidget {
           label,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        style: TextButton.styleFrom(
+        style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(vertical: DefaultPadding.large, horizontal: horizontalPadding),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: Pallete.borderColor,
-              width: ButtonSizes.borderWidth,
-            ),
             borderRadius: BorderRadius.circular(ButtonSizes.borderRadius),
+            side: const BorderSide(
+              width: ButtonSizes.borderWidth,
+              color: Pallete.borderColor,
+            ),
           ),
         ),
       ),

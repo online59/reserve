@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
+import 'package:reserve/src/constants/colors.dart';
 import 'package:reserve/src/constants/sizes.dart';
 import 'package:reserve/src/constants/strings.dart';
+import 'package:reserve/src/utils/themes/elevated_button_theme.dart';
 
 import '../../../authentication/presentation/screens/login_screen.dart';
 
@@ -35,8 +37,17 @@ class WelcomeScreen extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    style: TextButton.styleFrom(
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
                       fixedSize: const Size(double.infinity, 48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(ButtonSizes.borderRadius),
+                        side: const BorderSide(
+                          color: Pallete.primary,
+                          width: ButtonSizes.borderWidth,
+                        ),
+                      ),
+                      backgroundColor: Colors.transparent,
                     ),
                     onPressed: () {
                       Navigator.of(context).push(

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:reserve/src/constants/colors.dart';
+import 'package:reserve/src/utils/themes/text_button_theme.dart';
 import 'package:reserve/src/utils/themes/text_theme.dart';
+
+import 'elevated_button_theme.dart';
 
 class MyAppTheme {
   static ThemeData get lightTheme {
@@ -15,6 +18,8 @@ class MyAppTheme {
         buttonColor: Pallete.primary,
         textTheme: ButtonTextTheme.primary,
       ),
+      elevatedButtonTheme: AppElevatedButtonTheme.lightTheme,
+      textButtonTheme: AppTextButtonTheme.lightTheme,
     );
   }
 }

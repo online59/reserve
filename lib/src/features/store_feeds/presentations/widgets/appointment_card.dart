@@ -83,12 +83,15 @@ class AppointmentCard extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
-                  backgroundColor: Pallete.backgroundColor,
+                  backgroundColor: Pallete.primary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(45),
                   ),
                 ),
-                icon: const Icon(Icons.chat_bubble_outline_rounded),
+                icon: Icon(
+                  Icons.chat_bubble_outline_rounded,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
               ),
             ],
           ),

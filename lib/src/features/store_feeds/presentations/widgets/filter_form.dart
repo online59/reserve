@@ -79,14 +79,6 @@ class FilterForm extends StatelessWidget {
               BorderRadius.circular(ButtonSizes.borderRadius),
             ),
             child: ElevatedButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                shadowColor: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      ButtonSizes.borderRadius),
-                ),
-              ),
               onPressed: () {},
               child: Text(
                 'Search'.toUpperCase(),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:reserve/src/features/store_feeds/models/store_model.dart';
 
@@ -34,10 +35,9 @@ class ForYouCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
                 child: Image.network(
-                  'https://imageio.forbes.com/specials-images/imageserve/5babb7f1a7ea4342a948b79a/0x0.jpg',
-                  width: 200,
+                  store.image,
                   height: 150,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
               IconButton(

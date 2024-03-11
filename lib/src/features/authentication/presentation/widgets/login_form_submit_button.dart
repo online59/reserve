@@ -27,13 +27,6 @@ class GradientButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(ButtonSizes.borderRadius),
-          ),
-        ),
         child: Text(
           LoginStrings.signIn.toUpperCase(),
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
