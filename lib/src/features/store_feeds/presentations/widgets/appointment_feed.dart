@@ -65,7 +65,7 @@ class AppointmentFeed extends StatelessWidget {
                   date: DateTime.utc(2024, 03, index),
                   time: '10:00 AM',
                   type: 'Dine In',
-                  status: AppointmentStatus.pending,
+                  status: AppointmentStatus.randomAppointmentStatus(),
                 );
                 return AppointmentCard(
                   appointment: appointment,

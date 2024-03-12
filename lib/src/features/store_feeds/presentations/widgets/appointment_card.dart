@@ -28,12 +28,13 @@ class AppointmentCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TextButton(
+              TextButton.icon(
                 onPressed: () {},
                 style: TextButton.styleFrom(
                   backgroundColor: Pallete.backgroundColor,
                 ),
-                child: Text(appointment.status.value,
+                icon: appointment.status.icon,
+                label: Text(appointment.status.value,
                     style: Theme.of(context).textTheme.bodySmall),
               ),
               TextButton(
@@ -110,8 +111,9 @@ class AppointmentCard extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.calendar_today_rounded),
               label: Text(
-                  DateFormat("EEEE, d MMM | hh:mm a").format(appointment.date),
-                  style: Theme.of(context).textTheme.bodySmall),
+                  appointment.formattedDate,
+                  style: Theme.of(context).textTheme.bodySmall,
+                  ),
             ),
           )
         ],

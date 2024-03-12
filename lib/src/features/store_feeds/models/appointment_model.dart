@@ -1,14 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'dart:math';
+
+
 enum AppointmentStatus implements Comparable<AppointmentStatus> {
-  pending(value: 'Pending'),
-  confirmed(value: 'Confirmed'),
-  canceled(value: 'Canceled'),
-  completed(value: 'Completed');
+  pending(value: 'Pending', icon: Icon(Icons.timelapse, color: Colors.orange)),
+  confirmed(value: 'Confirmed', icon: Icon(Icons.check_circle_outlined, color: Colors.green)),
+  canceled(value: 'Canceled', icon: Icon(Icons.cancel_outlined, color: Colors.red)),
+  completed(value: 'Completed', icon: Icon(Icons.task_outlined, color: Colors.grey));
 
   const AppointmentStatus({
     required this.value,
+    required this.icon,
   });
 
   final String value;
+  final Icon icon;
+
+  static AppointmentStatus randomAppointmentStatus() {
+    const status = AppointmentStatus.values;
+    return status[Random().nextInt(status.length)];
+  }
 
   @override
   int compareTo(AppointmentStatus other) => value.compareTo(other.value);
@@ -43,6 +55,8 @@ class AppointmentModel {
     required this.type,
     this.status = AppointmentStatus.pending,
   });
+
+  get formattedDate => DateFormat("EEEE, d MMM | hh:mm a").format(date);
 
   factory AppointmentModel.fromJson(Map<String, dynamic> json) {
     return AppointmentModel(
