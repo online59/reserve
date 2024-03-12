@@ -40,12 +40,18 @@ Widget _buildFoodBeverageCard(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
-              child: Image.network(
+              child: Image.asset(
                 store.image,
                 width: 200,
                 height: 150,
                 fit: BoxFit.cover,
               ),
+              // child: Image.network(
+              //   store.image,
+              //   width: 200,
+              //   height: 150,
+              //   fit: BoxFit.cover,
+              // ),
             ),
             IconButton(
               onPressed: () {},

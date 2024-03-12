@@ -16,9 +16,8 @@ class ForYouCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: DefaultPadding.medium),
-      padding: const EdgeInsets.all(DefaultPadding.small),
       constraints: const BoxConstraints(
-        maxWidth: 200,
+        minWidth: double.infinity,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
@@ -33,7 +32,10 @@ class ForYouCard extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(DefaultBorder.borderRadius),
+                  topRight: Radius.circular(DefaultBorder.borderRadius),
+                ),
                 child: Image.network(
                   store.image,
                   fit: BoxFit.fill,
@@ -46,28 +48,36 @@ class ForYouCard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: DefaultSpacing.small),
-          Text(
-            'Store Name',
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: DefaultSpacing.small),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'City Name',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Colors.grey,
+          Padding(
+            padding: const EdgeInsets.all(DefaultPadding.small),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: DefaultSpacing.small),
+                Text(
+                  'Store Name',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
-              ),
-              const Icon(
-                Icons.star,
-                color: Colors.yellow,
-              ),
-            ],
+                const SizedBox(height: DefaultSpacing.small),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'City Name',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Colors.grey,
+                          ),
+                    ),
+                    const Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

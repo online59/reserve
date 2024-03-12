@@ -59,7 +59,8 @@ class AppointmentCard extends StatelessWidget {
                   borderRadius:
                       BorderRadius.circular(DefaultBorder.borderRadius),
                   image: DecorationImage(
-                    image: NetworkImage(appointment.storeImage),
+                    // image: NetworkImage(appointment.storeImage),
+                    image: AssetImage(appointment.storeImage),
                     fit: BoxFit.cover,
                   ),
                 ),

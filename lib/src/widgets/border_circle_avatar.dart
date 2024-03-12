@@ -29,7 +29,8 @@ class BorderCircleAvatar extends StatelessWidget {
         ),
         image: DecorationImage(
           fit: fit ?? BoxFit.cover,
-          image: NetworkImage(image),
+          image: AssetImage(image),
+          // image: NetworkImage(image),
         ),
       ),
     );

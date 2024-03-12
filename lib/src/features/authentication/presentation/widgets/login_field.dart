@@ -22,7 +22,7 @@ class LoginField extends StatelessWidget {
       obscureText: isObscure,
       controller: controller,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(DefaultPadding.large),
+        contentPadding: const EdgeInsets.all(DefaultPadding.medium),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Pallete.borderColor,

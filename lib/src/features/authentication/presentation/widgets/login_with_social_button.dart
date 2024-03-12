@@ -32,7 +32,8 @@ class SocialButton extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(vertical: DefaultPadding.large, horizontal: horizontalPadding),
+          fixedSize: const Size(double.infinity, ButtonSizes.height),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
           backgroundColor: Colors.transparent,
           elevation: 0,
           shape: RoundedRectangleBorder(
