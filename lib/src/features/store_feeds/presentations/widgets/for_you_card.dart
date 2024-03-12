@@ -36,7 +36,6 @@ class ForYouCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
                 child: Image.network(
                   store.image,
-                  height: 150,
                   fit: BoxFit.fill,
                 ),
               ),

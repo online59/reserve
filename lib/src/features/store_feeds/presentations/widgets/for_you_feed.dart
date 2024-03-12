@@ -65,7 +65,7 @@ class ForYouFeed extends StatelessWidget {
                     zip: 'Zip Code',
                   ),
                   rating: 4.5,
-                  image: WebImageStrings.storeImage,
+                  image: WebImageStrings.shopImage,
                   phone: '1234567890',
                   email: 'store@email.com',
                   category: StoreCategory.random(),

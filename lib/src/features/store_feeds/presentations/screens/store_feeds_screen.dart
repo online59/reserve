@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:reserve/src/constants/sizes.dart';
 import 'package:reserve/src/constants/strings.dart';
 import 'package:reserve/src/features/store_feeds/presentations/widgets/near_me_feed.dart';
+import 'package:reserve/src/widgets/border_circle_avatar.dart';
 import '../../../../constants/colors.dart';
 import '../widgets/appointment_feed.dart';
 import '../widgets/filter_form.dart';
@@ -37,13 +38,14 @@ class StoreFeedScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(DefaultPadding.large),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
                     children: [
-                      const CircleAvatar(
-                        radius: 30,
-                        backgroundImage: NetworkImage(
-                            WebImageStrings.profileImage),
+                      const BorderCircleAvatar(
+                        radius: DefaultBoxHeight.standardSize,
+                        image: WebImageStrings.profileImage,
+                        borderWidth: 2.0,
                       ),
                       const SizedBox(width: DefaultSpacing.medium),
                       Column(

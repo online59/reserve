@@ -23,6 +23,7 @@ class LottieImageStrings {
 }
 
 class WebImageStrings {
-  static const String profileImage = "https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg";
-  static const String storeImage = "https://supplychainguru.co.th/wp-content/uploads/2021/06/Starbuck.png";
+  static const String profileImage = 'assets/images/profile_avatar.png';
+  static const String storeImage = 'assets/images/barber_shop.jpg';
+  static const String shopImage = 'assets/images/carwash_shop.png';
 }

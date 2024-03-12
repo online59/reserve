@@ -79,7 +79,6 @@ class AppointmentCard extends StatelessWidget {
                   ),
                 ],
               ),
-              // Chat button
               const Spacer(),
               IconButton(
                 onPressed: () {},
