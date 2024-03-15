@@ -38,54 +38,58 @@ class StoreFeedScreen extends StatelessWidget {
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(DefaultPadding.large),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Row(
-                      children: [
-                        const BorderCircleAvatar(
-                          radius: DefaultBoxHeight.standardSize,
-                          image: WebImageStrings.profileImage,
-                          borderWidth: 2.0,
-                        ),
-                        const SizedBox(width: DefaultSpacing.medium),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('Welcome back'),
-                            Text(
-                              'John Doe',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineSmall
-                                  ?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          style: TextButton.styleFrom(
-                            backgroundColor: Pallete.backgroundColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(45),
-                            ),
+                child: Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const BorderCircleAvatar(
+                            radius: DefaultBoxHeight.standardSize,
+                            image: WebImageStrings.profileImage,
+                            borderWidth: 2.0,
                           ),
-                          onPressed: () {},
-                          icon: const Icon(Icons.notifications, color: Pallete.primary),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: DefaultPadding.large),
-                    const FilterForm(),
-                    const SizedBox(height: DefaultPadding.medium),
-                    const AppointmentFeed(),
-                    const SizedBox(height: DefaultPadding.medium),
-                    const NearMeFeed(),
-                    const SizedBox(height: DefaultPadding.medium),
-                    const ForYouFeed()
-                  ],
+                          const SizedBox(width: DefaultSpacing.medium),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Welcome back'),
+                              Text(
+                                'John Doe',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          IconButton(
+                            style: TextButton.styleFrom(
+                              backgroundColor: Pallete.backgroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(45),
+                              ),
+                            ),
+                            onPressed: () {},
+                            icon: const Icon(Icons.notifications, color: Pallete.primary),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: DefaultPadding.large),
+                      const FilterForm(),
+                      const SizedBox(height: DefaultPadding.medium),
+                      const AppointmentFeed(),
+                      const SizedBox(height: DefaultPadding.medium),
+                      const NearMeFeed(),
+                      const SizedBox(height: DefaultPadding.medium),
+                      const ForYouFeed()
+                    ],
+                  ),
                 ),
               ),
             ),

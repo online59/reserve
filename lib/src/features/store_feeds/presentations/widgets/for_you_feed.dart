@@ -17,44 +17,41 @@ class ForYouFeed extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(DefaultPadding.medium),
-      constraints: const BoxConstraints(
-        maxHeight: 800,
-        minHeight: 0,
-      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
         color: Pallete.whiteColor,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "For you",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "See more",
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Pallete.primary,
+      child: Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "For you",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
-            ],
-          ),
-          const SizedBox(height: DefaultSpacing.medium),
-          Expanded(
-            child: ListView.builder(
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "See more",
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Pallete.primary,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: DefaultSpacing.medium),
+            ListView.builder(
+              shrinkWrap: true,
               itemBuilder: (context, index) {
-                
                 final store = StoreModel(
                   id: 1,
                   name: 'Store Name',
@@ -77,8 +74,8 @@ class ForYouFeed extends StatelessWidget {
               },
               itemCount: 3,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

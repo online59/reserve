@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:reserve/src/constants/strings.dart';
 
 import '../../../../constants/colors.dart';
@@ -18,42 +16,40 @@ class AppointmentFeed extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(DefaultPadding.medium),
-      constraints: const BoxConstraints(
-        maxHeight: 700,
-      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(DefaultBorder.borderRadius),
         color: Pallete.whiteColor,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Appointment",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "See more",
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Pallete.primary,
+      child: Expanded(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Appointment",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
-            ],
-          ),
-          const SizedBox(height: DefaultSpacing.medium),
-          Expanded(
-            child: ListView.builder(
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "See more",
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Pallete.primary,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: DefaultSpacing.medium),
+            ListView.builder(
+              shrinkWrap: true,
               itemBuilder: (context, index) {
                 final appointment = AppointmentModel(
                   id: '$index',
@@ -75,8 +71,8 @@ class AppointmentFeed extends StatelessWidget {
               },
               itemCount: 3,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
