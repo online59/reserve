@@ -18,6 +18,14 @@ class StoreFeedScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Pallete.primary,
+        appBar: AppBar(
+          backgroundColor: Pallete.primary,
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu),
+          ),
+        ),
         body: Stack(
           children: [
             Column(

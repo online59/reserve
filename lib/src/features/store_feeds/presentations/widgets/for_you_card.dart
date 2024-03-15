@@ -36,10 +36,14 @@ class ForYouCard extends StatelessWidget {
                   topLeft: Radius.circular(DefaultBorder.borderRadius),
                   topRight: Radius.circular(DefaultBorder.borderRadius),
                 ),
-                child: Image.network(
+                child: Image.asset(
                   store.image,
                   fit: BoxFit.fill,
                 ),
+                // child: Image.network(
+                //   store.image,
+                //   fit: BoxFit.fill,
+                // ),
               ),
               IconButton(
                 onPressed: () {},
