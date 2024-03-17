@@ -7,9 +7,10 @@ import 'package:reserve/src/constants/sizes.dart';
 import '../../models/store_model.dart';
 
 class NearMeCard extends StatelessWidget {
-  const NearMeCard({super.key, required this.store});
+  const NearMeCard({super.key, required this.store, this.onPressed});
 
   final StoreModel store;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

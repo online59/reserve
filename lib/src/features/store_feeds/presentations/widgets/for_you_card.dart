@@ -7,10 +7,11 @@ import '../../../../constants/sizes.dart';
 class ForYouCard extends StatelessWidget {
   const ForYouCard({
     super.key,
-    required this.store,
+    required this.store, this.onPressed,
   });
 
   final StoreModel store;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

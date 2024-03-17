@@ -3,6 +3,7 @@ import 'package:reserve/src/constants/strings.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
+import '../../../store_info/presentations/screens/store_info_screen.dart';
 import '../../models/store_model.dart';
 import 'near_me_card.dart';
 
@@ -73,8 +74,20 @@ class NearMeFeed extends StatelessWidget {
                   type: StoreType.highlighted,
                 );
 
-                return NearMeCard(
-                  store: store,
+                return InkWell(
+                  onTap: () {
+                    // Navigate to store info screen
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return StoreInfoScreen(store: store);
+                        },
+                      ),
+                    );
+                  },
+                  child: NearMeCard(
+                    store: store,
+                  ),
                 );
               },
               itemCount: 3,

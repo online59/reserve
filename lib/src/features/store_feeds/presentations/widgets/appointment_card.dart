@@ -6,9 +6,10 @@ import 'package:reserve/src/constants/sizes.dart';
 import 'package:reserve/src/features/store_feeds/models/appointment_model.dart';
 
 class AppointmentCard extends StatelessWidget {
-  const AppointmentCard({super.key, required this.appointment});
+  const AppointmentCard({super.key, required this.appointment, this.onPressed});
 
   final AppointmentModel appointment;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
